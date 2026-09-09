@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Animatronique - Guide & Installation</title>
+  <style>
+    body { font-family: sans-serif; background: #0f172a; color: #f8fafc; max-width: 800px; margin: 30px auto; padding: 20px; line-height: 1.6; }
+    .card { background: #1e293b; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); margin-bottom: 25px; }
+    h1, h2 { color: #38bdf8; }
+    ul, ol { padding-left: 20px; }
+    li { margin-bottom: 12px; color: #cbd5e1; }
+    button, .buy-btn { background: #06b6d4; color: white; border: none; padding: 15px 25px; font-size: 1rem; font-weight: bold; border-radius: 8px; cursor: pointer; display: block; width: 100%; margin-top: 20px; text-decoration: none; text-align: center; box-sizing: border-box; }
+    button:hover, .buy-btn:hover { background: #0891b2; }
+    .buy-btn-small, .stl-btn { display: inline-block; padding: 4px 10px; font-size: 0.8rem; background: #0284c7; color: white; border-radius: 4px; text-decoration: none; }
+    .buy-btn-small { margin-left: 10px; vertical-align: middle; }
+    .stl-btn { padding: 12px 20px; font-size: 0.95rem; font-weight: bold; margin-top: 15px; background: #059669; display: block; text-align: center; }
+    .stl-btn:hover { background: #047857; }
+    /* Style Jaune Or PayPal avec alignement du logo */
+    .paypal-btn { padding: 12px 20px; font-size: 0.95rem; font-weight: bold; margin-top: 15px; background: #ffc439; color: #111827; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; border-radius: 8px; text-decoration: none; }
+    .paypal-btn:hover { background: #f4b62e; }
+    .paypal-logo { height: 18px; width: auto; vertical-align: middle; }
+    .note { font-size: 0.85rem; color: #94a3b8; text-align: center; margin-top: 15px; }
+    .donation-text { font-size: 0.9rem; color: #cbd5e1; text-align: center; margin-top: 20px; font-style: italic; }
+    .warning { background: #7f1d1d; border-left: 4px solid #ef4444; padding: 15px; border-radius: 6px; margin-bottom: 15px; color: #fecaca; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { border: 1px solid #334155; padding: 10px; text-align: left; font-size: 0.9rem; color: #cbd5e1; }
+    th { background: #334155; color: #f8fafc; }
+  </style>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+</head>
+<body>
+
+  <div class="card" style="text-align: center;">
+    <h1>🤖 Studio Animatronique</h1>
+    <p>Guide officiel, schémas de câblage, impression 3D et installation du micrologiciel en un clic.</p>
+  </div>
+
+  <!-- SECTION 1 : FOURNITURES -->
+  <div class="card">
+    <h2>🛠️ 1. Les Fournitures à Acheter</h2>
+    <p>Voici la liste du matériel nécessaire pour fabriquer votre robot (cliquez sur "Acheter" pour commander) :</p>
+    <ul>
+      <li>
+        <strong>1x Carte ESP32</strong> (Modèle standard NodeMCU ou DevKit).
+        <a href="METTRE_ICI_LE_LIEN_ESP32" target="_blank" class="buy-btn-small">Acheter</a>
+      </li>
+      <li>
+        <strong>1x Carte pilote de servos PCA9685</strong> (I2C 16 canaux).
+        <a href="METTRE_ICI_LE_LIEN_PCA9685" target="_blank" class="buy-btn-small">Acheter</a>
+      </li>
+      <li>
+        <strong>Plusieurs servomoteurs</strong> (ex: MG996R ou SG90 selon votre structure).
+        <a href="METTRE_ICI_LE_LIEN_SERVOS" target="_blank" class="buy-btn-small">Acheter</a>
+      </li>
+      <li>
+        <strong>1x Lecteur audio DY-SV17F</strong> (pour la gestion des sons et voix).
+        <a href="METTRE_ICI_LE_LIEN_AUDIO" target="_blank" class="buy-btn-small">Acheter</a>
+      </li>
+      <li>
+        <strong>1x Ruban ou matrice de LED WS2812B (NeoPixel)</strong> (pour les effets lumineux).
+        <a href="METTRE_ICI_LE_LIEN_LEDS" target="_blank" class="buy-btn-small">Acheter</a>
+      </li>
+      <li>
+        <strong>1x Alimentation externe 5V</strong> adaptée pour la puissance des moteurs et des LED.
+        <a href="METTRE_ICI_LE_LIEN_ALIM" target="_blank" class="buy-btn-small">Acheter</a>
+      </li>
+      <li>
+        <strong>1x Câble USB</strong> de qualité pour relier l'ESP32.
+        <a href="METTRE_ICI_LE_LIEN_CABLE" target="_blank" class="buy-btn-small">Acheter</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 2 : IMPRESSION 3D -->
+  <div class="card">
+    <h2>🖨️ 2. Fichiers 3D (Impression des pièces)</h2>
+    <p>Téléchargez les fichiers STL pour imprimer les supports de servomoteurs et les colliers de fixation pour tube de 25mm :</p>
+    <ul>
+      <li><strong>Supports Servomoteurs</strong> (MG996R / SG90)</li>
+      <li><strong>Fixations et Châssis</strong> (Adaptés pour tube structurel de 25mm)</li>
+    </ul>
+    <a href="METTRE_ICI_LE_LIEN_FICHIERS_STL" target="_blank" class="stl-btn">📥 Télécharger les fichiers STL</a>
+  </div>
+
+  <!-- SECTION 3 : CABLAGE -->
+  <div class="card">
+    <h2>⚡ 3. Schéma de Câblage de l'Ensemble</h2>
+    
+    <div class="warning">
+      <strong>Attention :</strong> Ne jamais alimenter les servomoteurs et les LED directement par la broche 5V/3.3V de l'ESP32. Utilisez toujours une alimentation externe 5V dédiée. Reliez impérativement toutes les masses (GND) ensemble.
+    </div>
+
+    <h3>Détail des connexions :</h3>
+    <ul>
+      <li><strong>Alimentation 5V (Positif)</strong> → Bornier V+ de la PCA9685, entrée VCC du lecteur audio et fil <strong>5V / VCC</strong> du ruban LED.</li>
+      <li><strong>Alimentation 5V (Négatif / GND)</strong> → Bornier GND de la PCA9685, GND de l'ESP32, lecteur audio et fil <strong>GND</strong> des LED (Masse commune).</li>
+      <li><strong>ESP32 (Pin 22 / SDA)</strong> → Broche SDA de la carte PCA9685.</li>
+      <li><strong>ESP32 (Pin 21 / SCL)</strong> → Broche SCL de la carte PCA9685.</li>
+      <li><strong>ESP32 et Lecteur Audio (UART - Croisement obligatoire)</strong> → Le <strong>TX</strong> de l'ESP32 va sur le <strong>RX</strong> du lecteur audio DY-SV17F, et le <strong>RX</strong> de l'ESP32 va sur le <strong>TX</strong> du lecteur audio (les signaux doivent être croisés).</li>
+      <li><strong>ESP32 (Pin Data LED, ex: Pin 4)</strong> → Entrée de données du ruban WS2812B (DIN), conseillé avec une résistance de 330Ω/470Ω.</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Composant Source</th>
+        <th>Broche / Fil</th>
+        <th>Composant Cible</th>
+        <th>Rôle</th>
+      </tr>
+      <tr>
+        <td>Alimentation 5V</td>
+        <td>Positif (+)</td>
+        <td>PCA9685 (V+) / Audio / LED (5V)</td>
+        <td>Puissance globale 5V</td>
+      </tr>
+      <tr>
+        <td>Alimentation 5V</td>
+        <td>Négatif (-)</td>
+        <td>Tous les GND (ESP32, PCA, Audio, LED)</td>
+        <td>Référence de masse commune</td>
+      </tr>
+      <tr>
+        <td>ESP32</td>
+        <td>Pin 22 (SDA) / Pin 21 (SCL)</td>
+        <td>PCA9685 (SDA / SCL)</td>
+        <td>Pilote I2C pour les servos</td>
+      </tr>
+      <tr>
+        <td>ESP32</td>
+        <td>TX (Transmission)</td>
+        <td>DY-SV17F (RX - Réception)</td>
+        <td>Envoi des commandes audio (croisé)</td>
+      </tr>
+      <tr>
+        <td>ESP32</td>
+        <td>RX (Réception)</td>
+        <td>DY-SV17F (TX - Transmission)</td>
+        <td>Réception des retours audio (croisé)</td>
+      </tr>
+      <tr>
+        <td>ESP32</td>
+        <td>Pin Données (ex: GPIO 4)</td>
+        <td>Ruban WS2812B (DIN)</td>
+        <td>Signal des effets lumineux LED</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- SECTION 4 : INSTALLATION DU LOGICIEL (WEB FLASHER) -->
+  <div class="card">
+    <h2>🚀 4. Installation du Code (Flashage Web)</h2>
+    <p>Une fois le montage assemblé, branchez votre carte ESP32 à l'ordinateur en USB, puis cliquez sur le bouton ci-dessous :</p>
+    
+    <div class="warning">
+      <strong>Astuce de flashage (Mode Boot) :</strong> Si la connexion bloque ou si le message "Connecting..." tourne en boucle, maintenez appuyé physiquement le bouton <strong>BOOT</strong> de votre carte ESP32, cliquez sur le bouton d'installation, sélectionnez votre port série, et relâchez le bouton <strong>BOOT</strong> dès que la barre de progression du téléchargement commence.
+    </div>
+
+    <esp-web-install-button manifest="./manifest.json">
+      <button slot="activate">Installer le Robot en 1 clic</button>
+    </esp-web-install-button>
+
+    <!-- Texte et Bouton PayPal en Jaune Or avec Logo SVG -->
+    <p class="donation-text">Ce projet est entièrement gratuit et open-source. Si vous souhaitez soutenir mon travail ou m'offrir un café, un petit pourboire est toujours apprécié !</p>
+    <a href="METTRE_ICI_LE_LIEN_PAYPAL" target="_blank" class="paypal-btn">
+      <svg class="paypal-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#003087" d="M20.067 8.583c-.155-.95-.824-1.635-1.92-1.954-1.282-.375-3.08-.56-5.35-.56H8.253a1.077 1.077 0 0 0-1.066.902L4.652 19.866a.539.539 0 0 0 .532.624h3.693c.484 0 .894-.35.975-.83l.798-5.068.082-.497c.081-.48.491-.83.975-.83h1.498c3.275 0 5.845-1.332 6.586-5.352.062-.33.085-.64.076-.928z"/>
+        <path fill="#0070ba" d="M18.114 7.647c-.203-1.007-.954-1.708-2.138-2.024-1.424-.383-3.398-.574-5.88-.574H8.706a1.077 1.077 0 0 0-1.066.902L5.105 18.93a.539.539 0 0 0 .532.624h3.764c.484 0 .894-.35.975-.83l.816-5.18.064-.39c.081-.48.491-.83.975-.83h1.39c3.086 0 5.512-1.251 6.21-5.033.064-.346.088-.674.079-.978l-.396-1.57zm.135-2.006c-.02.13-.047.269-.08.416-.628 2.87-2.738 3.82-5.912 3.82h-1.39c-.93 0-1.722.673-1.878 1.597l-.816 5.18-.083.527c-.015.093-.061.127-.155.127H5.637a.127.127 0 0 1-.125-.147l2.483-15.76a.539.539 0 0 1 .533-.451h5.688c2.115 0 3.792.174 4.887.502.83.245 1.39.757 1.576 1.547z"/>
+        <path fill="#003087" d="M15.542 6.528c-.52-.165-1.243-.298-2.158-.394-.658-.069-1.348-.104-2.064-.104H8.38a1.077 1.077 0 0 0-1.066.902L4.78 17.81a.539.539 0 0 0 .532.624h3.693c.484 0 .894-.35.975-.83l.798-5.068.082-.497c.081-.48.491-.83.975-.83h1.498c2.868 0 5.124-1.144 5.823-4.734.053-.274.078-.535.076-.782-.047-.35-.224-.658-.507-.887z"/>
+      </svg>
+      Envie de laisser un pourboire ? (PayPal)
+    </a>
+
+    <p class="note" style="margin-top: 20px;">
+      * Nécessite un navigateur compatible (Google Chrome, Microsoft Edge ou Opera).
+    </p>
+  </div>
+
+  <!-- SECTION 5 : UTILISATION -->
+  <div class="card">
+    <h2>📖 5. Premiers pas et Utilisation</h2>
+    <ol>
+      <li>Débranchez et rebranchez l'ESP32 après le flashage.</li>
+      <li>Sur votre téléphone ou PC, connectez-vous au réseau Wi-Fi : <strong>Robot-Config</strong> (Mot de passe : <code>12345678</code>).</li>
+      <li>Ouvrez votre navigateur sur l'adresse : <code>http://192.168.4.1</code></li>
+      <li>Allez dans l'onglet <strong>Wi-Fi</strong> pour basculer le robot sur votre réseau domestique.</li>
+      <li>Contrôlez et créez vos scènes via l'interface web dédiée !</li>
+    </ol>
+  </div>
+
+</body>
+</html>
