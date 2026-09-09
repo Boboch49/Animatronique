@@ -1,6 +1,7 @@
 {
   "name": "Studio Animatronique",
   "version": "1.0.0",
+  "wifi_credentials": false,
   "builds": [
     {
       "chipFamily": "ESP32",
