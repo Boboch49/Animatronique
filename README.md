@@ -53,6 +53,8 @@ Le système repose sur un firmware sécurisé (distribué sous forme de binaire)
 2. Rendez-vous sur la page officielle du **Flasheur en Ligne**.
 3. Cliquez sur le bouton d'installation pour flasher automatiquement le micrologiciel en quelques secondes.
 
+https://boboch49.github.io/Animatronique/
+
 ---
 
 ## 📖 Premiers Pas & Utilisation
